@@ -75,7 +75,9 @@ class Json extends Driver
             $contents = '{}';
         }
 
-        if($data !== $this->read()){
+        $old_contents = $this->read();
+
+        if($data !== $old_contents){
             $this->files->put($this->path, $contents);
         }
     }
