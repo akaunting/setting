@@ -157,15 +157,16 @@ class Database extends Driver
      */
     protected function write(array $data)
     {
-        $keys = $this->newQuery()->pluck($this->key);
+        $keys = $this->newQuery()->pluck($this->value, $this->key);
 
         $insert_data = LaravelArr::dot($data);
         $update_data = [];
         $delete_keys = [];
 
-        foreach ($keys as $key) {
+        foreach ($keys as $key => $value) {;
             if (isset($insert_data[$key])) {
-                $update_data[$key] = $insert_data[$key];
+                if($insert_data[$key] !== $keys[$key])
+                    $update_data[$key] = $insert_data[$key];
             } else {
                 $delete_keys[] = $key;
             }
