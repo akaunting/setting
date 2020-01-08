@@ -165,8 +165,9 @@ class Database extends Driver
 
         foreach ($keys as $key => $value) {
             if (isset($insert_data[$key])) {
-                if($insert_data[$key] !== $keys[$key])
+                if($insert_data[$key] !== $keys[$key]) {
                     $update_data[$key] = $insert_data[$key];
+                }
             } else {
                 $delete_keys[] = $key;
             }
