@@ -3,7 +3,7 @@
 namespace Akaunting\Setting;
 
 use Akaunting\Setting\Middleware\AutoSaveSetting;
-use Blade;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Arr;
 
@@ -34,7 +34,7 @@ class Provider extends ServiceProvider
             $kernel = $this->app['Illuminate\Contracts\Http\Kernel'];
             $kernel->pushMiddleware(AutoSaveSetting::class);
         }
-        
+
         $override = config('setting.override', []);
 
         foreach (Arr::dot($override) as $config_key => $setting_key) {
