@@ -18,12 +18,13 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": ">=5.3"
+        "illuminate/support": ">=5.3",
+        "illuminate/database": ">=5.3",
+        "illuminate/filesystem": ">=5.3"
     },
     "require-dev": {
         "phpunit/phpunit": ">=4.8",
-        "mockery/mockery": "0.9.*",
-        "laravel/framework": ">=5.3"
+        "mockery/mockery": "0.9.*"
     },
     "autoload": {
     "psr-4": {
