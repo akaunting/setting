@@ -49,12 +49,12 @@ class Manager extends BaseManager
     {
         $path = config('setting.json.path');
 
-        return new Json($this->app['files'], $path);
+        return new Json($this->container['files'], $path);
     }
 
     public function createDatabaseDriver()
     {
-        $connection = $this->app['db']->connection(config('setting.database.connection'));
+        $connection = $this->container['db']->connection(config('setting.database.connection'));
         $table = config('setting.database.table');
         $key = config('setting.database.key');
         $value = config('setting.database.value');
