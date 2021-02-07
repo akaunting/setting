@@ -27,6 +27,13 @@ abstract class Driver
      * @var bool
      */
     protected $loaded = false;
+    
+    /**
+     * Include and merge with fallbacks
+     *
+     * @var bool
+     */
+    protected $with_fallback = false;
 
     /**
      * Get a specific key from the settings data.
@@ -155,6 +162,10 @@ abstract class Driver
         }
 
         $this->load();
+        
+        if ($this->with_fallback) {
+            return array_merge((array) config('setting.fallback'), $this->data);
+        }
 
         return $this->data;
     }
