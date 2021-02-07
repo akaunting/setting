@@ -121,6 +121,10 @@ If you like to encrypt the values for a given key, you can pass the key to the `
 ],
 ```
 
+### Include fallbacks
+
+You can include fallback settings using `setting()->withFallback()->all()`.
+
 ### JSON Storage
 
 You can modify the path used on run-time using `setting()->setPath($path)`.
