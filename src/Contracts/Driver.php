@@ -35,6 +35,17 @@ abstract class Driver
      */
     protected $with_fallback = false;
 
+    
+    /**
+     * Includes fallback data and merge 
+     */
+    public function withFallback()
+    {
+        $this->with_fallback = true;
+
+        return $this;
+    }
+    
     /**
      * Get a specific key from the settings data.
      *
